@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lâ İlâhe İllallah'ın Şartlarının Delilleri</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;0,8..60,800;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7f4ed;
+    --card:#fffdf9;
+    --ink:#1f2430;
+    --muted:#6b6f78;
+    --line:#e3dccd;
+    --navy:#1d3557;
+    --ayet:#2e6b4e;
+    --hadis:#26538c;
+    --gold:#b07d2a;
+    --hl:rgba(160,120,230,.30);
+    --ar-size:1.95rem;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Source Serif 4",Georgia,serif;
+    font-size:18px;
+    line-height:1.65;
+  }
+  .wrap{max-width:860px;margin:0 auto;padding:0 18px}
+
+  /* ---------- Başlık ---------- */
+  .cover{
+    text-align:center;
+    padding:64px 0 40px;
+    border-bottom:1px solid var(--line);
+  }
+  .brand{
+    font-size:.78rem;
+    letter-spacing:.32em;
+    color:var(--gold);
+    font-weight:700;
+    margin-bottom:22px;
+  }
+  .cover .shahada{
+    font-family:"Scheherazade New",serif;
+    font-size:2.6rem;
+    color:var(--navy);
+    line-height:1.6;
+    margin-bottom:14px;
+  }
+  .cover h1{
+    font-size:clamp(1.9rem,5vw,3.1rem);
+    line-height:1.18;
+    font-weight:800;
+    color:var(--navy);
+    letter-spacing:.01em;
+  }
+  .ornament{
+    display:flex;align-items:center;justify-content:center;gap:14px;
+    color:var(--gold);margin:26px auto 0;max-width:340px;
+  }
+  .ornament::before,.ornament::after{content:"";flex:1;height:1px;background:var(--gold);opacity:.5}
+
+  /* ---------- Fihrist ---------- */
+  .index{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:10px;
+    margin:34px 0 10px;
+  }
+  .index a{
+    display:flex;align-items:center;gap:10px;
+    text-decoration:none;color:var(--ink);
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:10px 12px;
+    transition:border-color .2s,transform .2s;
+  }
+  .index a:hover{border-color:var(--gold);transform:translateY(-1px)}
+  .index .n{
+    flex:none;width:28px;height:28px;border-radius:50%;
+    background:var(--navy);color:#fff;font-weight:700;font-size:.85rem;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .index .t{font-weight:700;font-size:.95rem;line-height:1.2}
+  .index .a{font-family:"Scheherazade New",serif;font-size:1.15rem;color:var(--muted);line-height:1.2}
+
+  /* ---------- Araç çubuğu ---------- */
+  .toolbar{
+    position:sticky;top:0;z-index:10;
+    background:rgba(247,244,237,.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .toolbar .wrap{
+    display:flex;flex-wrap:wrap;align-items:center;gap:8px;
+    padding-top:10px;padding-bottom:10px;
+  }
+  .toolbar .label{font-size:.78rem;letter-spacing:.12em;font-weight:700;color:var(--muted);margin-right:4px}
+  .toolbar button{
+    font-family:inherit;font-size:.86rem;
+    background:var(--card);color:var(--ink);
+    border:1px solid var(--line);border-radius:999px;
+    padding:6px 13px;cursor:pointer;
+  }
+  .toolbar button:hover{border-color:var(--navy)}
+  .toolbar button[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .toolbar .sep{flex:1}
+  .toolbar .hint{
+    width:100%;font-size:.8rem;color:var(--muted);font-style:italic;display:none;
+  }
+  body.hide-ar .toolbar .hint,body.hide-tr .toolbar .hint{display:block}
+
+  /* ---------- Şart bölümü ---------- */
+  .sart{padding:56px 0 24px;border-bottom:1px solid var(--line);scroll-margin-top:70px}
+  .sart:last-of-type{border-bottom:none}
+  .sart-head{
+    display:flex;align-items:center;gap:22px;
+    margin-bottom:30px;
+  }
+  .sart-head .num{
+    flex:none;
+    width:74px;height:74px;border-radius:50%;
+    border:2px solid var(--gold);
+    color:var(--gold);
+    font-size:2.1rem;font-weight:800;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .sart-head .names{flex:1;display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .sart-head h2{
+    font-size:clamp(2.4rem,7vw,3.6rem);
+    line-height:1;
+    font-weight:800;
+    color:var(--navy);
+    letter-spacing:.02em;
+  }
+  .sart-head .ar-name{
+    font-family:"Scheherazade New",serif;
+    font-size:clamp(2.2rem,6vw,3.2rem);
+    color:var(--navy);
+    line-height:1.3;
+  }
+
+  /* ---------- Delil kartları ---------- */
+  .delil{
+    position:relative;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:26px 28px 20px;
+    margin-bottom:22px;
+  }
+  .delil::before{
+    content:"";position:absolute;left:0;right:0;top:0;height:4px;
+    border-radius:12px 12px 0 0;
+  }
+  .delil.ayet::before{background:var(--ayet)}
+  .delil.hadis::before{background:var(--hadis)}
+  .delil.ayet{box-shadow:inset 0 0 0 5px var(--card),inset 0 0 0 6px rgba(46,107,78,.18)}
+
+  .tag{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  .ayet .tag{color:var(--ayet)}
+  .hadis .tag{color:var(--hadis)}
+  .tag .ico{font-family:"Scheherazade New",serif;font-size:1.3rem;letter-spacing:0;line-height:1}
+  .lead{font-size:.95rem;color:var(--muted);font-style:italic;margin-bottom:6px}
+
+  .ar{
+    font-family:"Scheherazade New",serif;
+    font-size:var(--ar-size);
+    line-height:2.15;
+    text-align:right;
+    direction:rtl;
+    color:var(--ink);
+    padding:10px 0 14px;
+    transition:filter .25s;
+  }
+  .ayet .ar .br{color:var(--ayet);font-size:.9em}
+
+  .tr{
+    font-size:1.04rem;
+    color:#2c3240;
+    padding:14px 0 4px;
+    border-top:1px dashed var(--line);
+    transition:filter .25s;
+  }
+  .src{
+    margin-top:12px;
+    font-size:.85rem;font-weight:600;
+    color:var(--muted);
+    text-align:right;
+  }
+
+  /* Anahtar kelime vurgusu */
+  .k{
+    background:linear-gradient(transparent 74%,var(--hl) 74%,var(--hl) 92%,transparent 92%);
+    border-radius:2px;
+    padding:0 1px;
+  }
+  .ar .k{background:linear-gradient(transparent 70%,var(--hl) 70%,var(--hl) 84%,transparent 84%)}
+  body.no-hl .k{background:none}
+
+  /* Ezber modu */
+  body.hide-ar .ar:not(.shown),
+  body.hide-tr .tr:not(.shown){
+    filter:blur(8px);
+    cursor:pointer;
+    user-select:none;
+  }
+
+  /* ---------- Alt bilgi ---------- */
+  footer{
+    text-align:center;
+    padding:40px 0 60px;
+    color:var(--muted);
+    font-size:.85rem;
+    letter-spacing:.08em;
+  }
+  footer b{color:var(--gold);letter-spacing:.24em}
+
+  @media (max-width:600px){
+    body{font-size:17px}
+    :root{--ar-size:1.7rem}
+    .cover{padding:44px 0 30px}
+    .cover .shahada{font-size:2.1rem}
+    .sart{padding:42px 0 16px}
+    .sart-head{gap:14px}
+    .sart-head .num{width:56px;height:56px;font-size:1.6rem}
+    .delil{padding:22px 18px 16px}
+    .toolbar .sep{display:none}
+  }
+
+  @media print{
+    body{background:#fff;font-size:14px}
+    .toolbar{display:none}
+    .ar,.tr{filter:none!important}
+    .delil{break-inside:avoid;box-shadow:none}
+    .sart-head{break-after:avoid}
+    .cover{padding-top:20px}
+    .index a{border-color:#ccc}
+  }
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <div class="wrap">
+    <div class="brand">İLİM DERSLERİ</div>
+    <div class="shahada" lang="ar" dir="rtl">لَا إِلَٰهَ إِلَّا اللَّهُ</div>
+    <h1>LÂ İLÂHE İLLALLAH'IN ŞARTLARININ KUR'AN VE SÜNNET'TEN DELİLLERİ</h1>
+    <div class="ornament">✦</div>
+
+    <nav class="index">
+      <a href="#s1"><span class="n">1</span><span><span class="t">İlim</span><br><span class="a" lang="ar">الْعِلْمُ</span></span></a>
+      <a href="#s2"><span class="n">2</span><span><span class="t">Yakîn</span><br><span class="a" lang="ar">الْيَقِينُ</span></span></a>
+      <a href="#s3"><span class="n">3</span><span><span class="t">İhlâs</span><br><span class="a" lang="ar">الْإِخْلَاصُ</span></span></a>
+      <a href="#s4"><span class="n">4</span><span><span class="t">Sıdk</span><br><span class="a" lang="ar">الصِّدْقُ</span></span></a>
+      <a href="#s5"><span class="n">5</span><span><span class="t">Muhabbet</span><br><span class="a" lang="ar">الْمَحَبَّةُ</span></span></a>
+      <a href="#s6"><span class="n">6</span><span><span class="t">Kabul</span><br><span class="a" lang="ar">الْقَبُولُ</span></span></a>
+      <a href="#s7"><span class="n">7</span><span><span class="t">İnkıyad</span><br><span class="a" lang="ar">الِانْقِيَادُ</span></span></a>
+      <a href="#s8"><span class="n">8</span><span><span class="t">Küfr bi't-Tâğût</span><br><span class="a" lang="ar">الْكُفْرُ بِالطَّاغُوتِ</span></span></a>
+    </nav>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="label">EZBER</span>
+    <button type="button" data-toggle="hide-ar" aria-pressed="false">Arapçayı gizle</button>
+    <button type="button" data-toggle="hide-tr" aria-pressed="false">Meali gizle</button>
+    <button type="button" data-toggle="no-hl" aria-pressed="false">Vurguları kapat</button>
+    <span class="sep"></span>
+    <button type="button" id="ar-minus" aria-label="Arapça yazıyı küçült">A−</button>
+    <button type="button" id="ar-plus" aria-label="Arapça yazıyı büyüt">A+</button>
+    <div class="hint">Gizlenen metni görmek için üzerine dokunun. Tekrar dokununca yeniden gizlenir.</div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- 1 İLİM -->
+  <section class="sart" id="s1">
+    <div class="sart-head">
+      <div class="num">1</div>
+      <div class="names">
+        <h2>İLİM</h2>
+        <div class="ar-name" lang="ar" dir="rtl">الْعِلْمُ</div>
+      </div>
+    </div>
+
+    <article class="delil ayet">
+      <div class="tag"><span class="ico">۞</span>Kur'an'dan delil</div>
+      <p class="lead">Allah Teâlâ şöyle buyurmuştur:</p>
+      <p class="ar" lang="ar" dir="rtl"><span class="br">﴿</span><span class="k">فَاعْلَمْ</span> أَنَّهُ لَا إِلَٰهَ إِلَّا اللَّهُ وَاسْتَغْفِرْ لِذَنْبِكَ وَلِلْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ<span class="br">﴾</span></p>
+      <p class="tr">“<span class="k">Bil ki</span> Allah'tan başka ibadete layık hiçbir ilah yoktur. Kendi günahın ve mümin erkeklerle mümin kadınlar için bağışlanma dile.”</p>
+      <p class="src">📚 Muhammed Suresi, 19</p>
+    </article>
+
+    <article class="delil hadis">
+      <div class="tag"><span class="ico">ﷺ</span>Sünnetten delil</div>
+      <p class="lead">Resûlullah ﷺ şöyle buyurmuştur:</p>
+      <p class="ar" lang="ar" dir="rtl">مَنْ مَاتَ وَهُوَ <span class="k">يَعْلَمُ</span> أَنَّهُ لَا إِلَهَ إِلَّا اللَّهُ دَخَلَ الْجَنَّةَ</p>
+      <p class="tr">“Kim Allah'tan başka ibadete layık hiçbir ilah olmadığını <span class="k">bilerek</span> ölürse cennete girer.”</p>
+      <p class="src">📚 Muslim, 26</p>
+    </article>
+  </section>
+
+  <!-- 2 YAKÎN -->
+  <section class="sart" id="s2">
+    <div class="sart-head">
+      <div class="num">2</div>
+      <div class="names">
+        <h2>YAKÎN</h2>
+        <div class="ar-name" lang="ar" dir="rtl">الْيَقِينُ</div>
+      </div>
+    </div>
+
+    <article class="delil ayet">
+      <div class="tag"><span class="ico">۞</span>Kur'an'dan delil</div>
+      <p class="lead">Allah Teâlâ şöyle buyurmuştur:</p>
+      <p class="ar" lang="ar" dir="rtl"><span class="br">﴿</span>إِنَّمَا الْمُؤْمِنُونَ الَّذِينَ آمَنُوا بِاللَّهِ وَرَسُولِهِ <span class="k">ثُمَّ لَمْ يَرْتَابُوا</span> وَجَاهَدُوا بِأَمْوَالِهِمْ وَأَنْفُسِهِمْ فِي سَبِيلِ اللَّهِ أُولَٰئِكَ هُمُ الصَّادِقُونَ<span class="br">﴾</span></p>
+      <p class="tr">“Müminler ancak Allah'a ve Resûlü'ne iman eden, sonra da <span class="k">şüpheye düşmeyen</span>, Allah yolunda mallarıyla ve canlarıyla cihad eden kimselerdir. İşte sadık olanlar bunlardır.”</p>
+      <p class="src">📚 Hucurât Suresi, 15</p>
+    </article>
+
+    <article class="delil hadis">
+      <div class="tag"><span class="ico">ﷺ</span>Sünnetten delil</div>
+      <p class="lead">Resûlullah ﷺ, Ebû Hureyre radiyallahu 'anhu'ya şöyle buyurmuştur:</p>
+      <p class="ar" lang="ar" dir="rtl">اذْهَبْ بِنَعْلَيَّ هَاتَيْنِ، فَمَنْ لَقِيتَ مِنْ وَرَاءِ هَذَا الْحَائِطِ يَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ <span class="k">مُسْتَيْقِنًا بِهَا قَلْبُهُ</span> فَبَشِّرْهُ بِالْجَنَّةِ</p>
+      <p class="tr">“Benim şu iki ayakkabımı al ve bu bahçenin dışında karşılaştığın kimselerden, <span class="k">kalbiyle kesin olarak inanarak</span> Lâ ilâhe illallah'a şehadet eden herkesi cennetle müjdele.”</p>
+      <p class="src">📚 Muslim, 31</p>
+    </article>
+  </section>
+
+  <!-- 3 İHLÂS -->
+  <section class="sart" id="s3">
+    <div class="sart-head">
+      <div class="num">3</div>
+      <div class="names">
+        <h2>İHLÂS</h2>
+        <div class="ar-name" lang="ar" dir="rtl">الْإِخْلَاصُ</div>
+      </div>
+    </div>
+
+    <article class="delil ayet">
+      <div class="tag"><span class="ico">۞</span>Kur'an'dan delil</div>
+      <p class="lead">Allah Teâlâ şöyle buyurmuştur:</p>
+      <p class="ar" lang="ar" dir="rtl"><span class="br">﴿</span>قُلْ إِنِّي أُمِرْتُ أَنْ أَعْبُدَ اللَّهَ <span class="k">مُخْلِصًا لَهُ الدِّينَ</span><span class="br">﴾</span></p>
+      <p class="tr">“De ki: Şüphesiz ben, <span class="k">dini yalnızca Allah'a has kılarak</span> O'na ibadet etmekle emrolundum.”</p>
+      <p class="src">📚 Zümer Suresi, 11</p>
+    </article>
+
+    <article class="delil hadis">
+      <div class="tag"><span class="ico">ﷺ</span>Sünnetten delil</div>
+      <p class="lead">Resûlullah ﷺ şöyle buyurmuştur:</p>
+      <p class="ar" lang="ar" dir="rtl">أَسْعَدُ النَّاسِ بِشَفَاعَتِي يَوْمَ الْقِيَامَةِ مَنْ قَالَ لَا إِلَهَ إِلَّا اللَّهُ <span class="k">خَالِصًا مِنْ قَلْبِهِ</span> أَوْ نَفْسِهِ</p>
+      <p class="tr">“Kıyamet günü şefaatime en çok nail olacak kişi, Lâ ilâhe illallah'ı <span class="k">kalbinden</span> veya nefsinden <span class="k">ihlâsla</span> söyleyen kimsedir.”</p>
+      <p class="src">📚 Buhârî, 99</p>
+    </article>
+  </section>
+
+  <!-- 4 SIDK -->
+  <section class="sart" id="s4">
+    <div class="sart-head">
+      <div class="num">4</div>
+      <div class="names">
+        <h2>SIDK</h2>
+        <div class="ar-name" lang="ar" dir="rtl">الصِّدْقُ</div>
+      </div>
+    </div>
+
+    <article class="delil ayet">
+      <div class="tag"><span class="ico">۞</span>Kur'an'dan delil</div>
+      <p class="lead">Allah Teâlâ şöyle buyurmuştur:</p>
+      <p class="ar" lang="ar" dir="rtl"><span class="br">﴿</span>وَالَّذِي <span class="k">جَاءَ بِالصِّدْقِ وَصَدَّقَ بِهِ</span> أُولَٰئِكَ هُمُ الْمُتَّقُونَ<span class="br">﴾</span></p>
+      <p class="tr">“<span class="k">Doğruyu getiren ve onu tasdik edenler</span>, işte onlar takva sahipleridir.”</p>
+      <p class="src">📚 Zümer Suresi, 33</p>
+    </article>
+
+    <article class="delil hadis">
+      <div class="tag"><span class="ico">ﷺ</span>Sünnetten delil</div>
+      <p class="lead">Resûlullah ﷺ şöyle buyurmuştur:</p>
+      <p class="ar" lang="ar" dir="rtl">مَا مِنْ أَحَدٍ يَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَأَنَّ مُحَمَّدًا رَسُولُ اللَّهِ <span class="k">صِدْقًا مِنْ قَلْبِهِ</span> إِلَّا حَرَّمَهُ اللَّهُ عَلَى النَّارِ</p>
+      <p class="tr">“Kim <span class="k">kalbinden sıdk ile</span> Allah'tan başka ibadete layık hiçbir ilah olmadığına ve Muhammed'in Allah'ın Resûlü olduğuna şehadet ederse, Allah onu ateşe haram kılar.”</p>
+      <p class="src">📚 Buhârî, 128</p>
+    </article>
+  </section>
+
+  <!-- 5 MUHABBET -->
+  <section class="sart" id="s5">
+    <div class="sart-head">
+      <div class="num">5</div>
+      <div class="names">
+        <h2>MUHABBET</h2>
+        <div class="ar-name" lang="ar" dir="rtl">الْمَحَبَّةُ</div>
+      </div>
+    </div>
+
+    <article class="delil ayet">
+      <div class="tag"><span class="ico">۞</span>Kur'an'dan delil</div>
+      <p class="lead">Allah Teâlâ şöyle buyurmuştur:</p>
+      <p class="ar" lang="ar" dir="rtl"><span class="br">﴿</span>يَا أَيُّهَا الَّذِينَ آمَنُوا مَنْ يَرْتَدَّ مِنْكُمْ عَنْ دِينِهِ فَسَوْفَ يَأْتِي اللَّهُ بِقَوْمٍ <span class="k">يُحِبُّهُمْ وَيُحِبُّونَهُ</span> أَذِلَّةٍ عَلَى الْمُؤْمِنِينَ أَعِزَّةٍ عَلَى الْكَافِرِينَ يُجَاهِدُونَ فِي سَبِيلِ اللَّهِ وَلَا يَخَافُونَ لَوْمَةَ لَائِمٍ ذَٰلِكَ فَضْلُ اللَّهِ يُؤْتِيهِ مَنْ يَشَاءُ وَاللَّهُ وَاسِعٌ عَلِيمٌ<span class="br">﴾</span></p>
+      <p class="tr">“Ey iman edenler! Sizden kim dininden dönerse, Allah onların yerine kendisinin <span class="k">sevdiği ve kendisini seven</span>, müminlere karşı alçak gönüllü, kâfirlere karşı izzetli, Allah yolunda cihad eden ve hiçbir kınayıcının kınamasından korkmayan bir topluluk getirir. Bu, Allah'ın dilediğine verdiği lütfudur. Allah'ın lütfu geniştir ve O, her şeyi bilendir.”</p>
+      <p class="src">📚 Mâide Suresi, 54</p>
+    </article>
+
+    <article class="delil hadis">
+      <div class="tag"><span class="ico">ﷺ</span>Sünnetten delil</div>
+      <p class="lead">Resûlullah ﷺ şöyle buyurmuştur:</p>
+      <p class="ar" lang="ar" dir="rtl">فَوَالَّذِي نَفْسِي بِيَدِهِ لَا يُؤْمِنُ أَحَدُكُمْ حَتَّى <span class="k">أَكُونَ أَحَبَّ إِلَيْهِ</span> مِنْ وَالِدِهِ وَوَلَدِهِ</p>
+      <p class="tr">“Nefsim elinde olan Allah'a yemin olsun ki ben, sizden birinize babasından ve çocuğundan <span class="k">daha sevimli olmadıkça</span> o kişi iman etmiş olmaz.”</p>
+      <p class="src">📚 Buhârî, 14</p>
+    </article>
+  </section>
+
+  <!-- 6 KABUL -->
+  <section class="sart" id="s6">
+    <div class="sart-head">
+      <div class="num">6</div>
+      <div class="names">
+        <h2>KABUL</h2>
+        <div class="ar-name" lang="ar" dir="rtl">الْقَبُولُ</div>
+      </div>
+    </div>
+
+    <article class="delil ayet">
+      <div class="tag"><span class="ico">۞</span>Kur'an'dan delil</div>
+      <p class="lead">Allah Teâlâ şöyle buyurmuştur:</p>
+      <p class="ar" lang="ar" dir="rtl"><span class="br">﴿</span>فَإِنَّهُمْ يَوْمَئِذٍ فِي الْعَذَابِ مُشْتَرِكُونَ ۝ إِنَّا كَذَٰلِكَ نَفْعَلُ بِالْمُجْرِمِينَ ۝ إِنَّهُمْ كَانُوا إِذَا قِيلَ لَهُمْ لَا إِلَٰهَ إِلَّا اللَّهُ <span class="k">يَسْتَكْبِرُونَ</span> ۝ وَيَقُولُونَ أَئِنَّا لَتَارِكُو آلِهَتِنَا لِشَاعِرٍ مَجْنُونٍ ۝ بَلْ جَاءَ بِالْحَقِّ وَصَدَّقَ الْمُرْسَلِينَ<span class="br">﴾</span></p>
+      <p class="tr">“O gün onlar azapta ortak olacaklardır. Şüphesiz Biz suçlulara böyle yaparız. Onlara ‘Allah'tan başka ibadete layık hiçbir ilah yoktur.’ denildiğinde <span class="k">kibirlenirlerdi</span>. Ve ‘Biz deli bir şair için ilahlarımızı mı terk edeceğiz?’ derlerdi. Hayır! O, hakkı getirmiş ve peygamberleri tasdik etmiştir.”</p>
+      <p class="src">📚 Sâffât Suresi, 33-37</p>
+    </article>
+
+    <article class="delil hadis">
+      <div class="tag"><span class="ico">ﷺ</span>Sünnetten delil</div>
+      <p class="lead">Resûlullah ﷺ şöyle buyurmuştur:</p>
+      <p class="ar" lang="ar" dir="rtl">أُمِرْتُ أَنْ أُقَاتِلَ النَّاسَ حَتَّى يَشْهَدُوا أَنْ لَا إِلَهَ إِلَّا اللَّهُ <span class="k">وَيُؤْمِنُوا بِي وَبِمَا جِئْتُ بِهِ</span>، فَإِذَا فَعَلُوا ذَلِكَ عَصَمُوا مِنِّي دِمَاءَهُمْ وَأَمْوَالَهُمْ إِلَّا بِحَقِّهَا، وَحِسَابُهُمْ عَلَى اللَّهِ</p>
+      <p class="tr">“İnsanlarla, Allah'tan başka ibadete layık hiçbir ilah olmadığına şehadet edinceye, <span class="k">bana ve benim getirdiğim şeylere iman edinceye</span> kadar savaşmakla emrolundum. Bunları yaptıklarında, onun hakkı dışında canlarını ve mallarını benden korumuş olurlar. Hesapları ise Allah'a aittir.”</p>
+      <p class="src">📚 Muslim, 21b</p>
+    </article>
+  </section>
+
+  <!-- 7 İNKIYAD -->
+  <section class="sart" id="s7">
+    <div class="sart-head">
+      <div class="num">7</div>
+      <div class="names">
+        <h2>İNKIYAD</h2>
+        <div class="ar-name" lang="ar" dir="rtl">الِانْقِيَادُ</div>
+      </div>
+    </div>
+
+    <article class="delil ayet">
+      <div class="tag"><span class="ico">۞</span>Kur'an'dan delil</div>
+      <p class="lead">Allah Teâlâ şöyle buyurmuştur:</p>
+      <p class="ar" lang="ar" dir="rtl"><span class="br">﴿</span>آمَنَ الرَّسُولُ بِمَا أُنْزِلَ إِلَيْهِ مِنْ رَبِّهِ وَالْمُؤْمِنُونَ كُلٌّ آمَنَ بِاللَّهِ وَمَلَائِكَتِهِ وَكُتُبِهِ وَرُسُلِهِ لَا نُفَرِّقُ بَيْنَ أَحَدٍ مِنْ رُسُلِهِ وَقَالُوا <span class="k">سَمِعْنَا وَأَطَعْنَا</span> غُفْرَانَكَ رَبَّنَا وَإِلَيْكَ الْمَصِيرُ<span class="br">﴾</span></p>
+      <p class="tr">“Resûl, Rabbinden kendisine indirilene iman etti. Müminler de iman ettiler. Hepsi Allah'a, meleklerine, kitaplarına ve peygamberlerine iman ettiler. ‘O'nun peygamberlerinden hiçbirini diğerinden ayırmayız.’ dediler. Ve şöyle söylediler: ‘<span class="k">İşittik ve itaat ettik</span>. Rabbimiz! Senden bağışlanma dileriz. Dönüş yalnızca Sanadır.’”</p>
+      <p class="src">📚 Bakara Suresi, 285</p>
+    </article>
+
+    <article class="delil hadis">
+      <div class="tag"><span class="ico">ﷺ</span>Sünnetten delil</div>
+      <p class="lead">Resûlullah ﷺ şöyle buyurmuştur:</p>
+      <p class="ar" lang="ar" dir="rtl">كُلُّ أُمَّتِي يَدْخُلُونَ الْجَنَّةَ إِلَّا مَنْ أَبَى، قَالُوا: يَا رَسُولَ اللَّهِ، وَمَنْ يَأْبَى؟ قَالَ: <span class="k">مَنْ أَطَاعَنِي دَخَلَ الْجَنَّةَ</span>، وَمَنْ عَصَانِي فَقَدْ أَبَى</p>
+      <p class="tr">“Ümmetimin tamamı, yüz çevirenler dışında cennete girecektir. Sahâbîler, ‘Ey Allah'ın Resûlü! Kim yüz çevirir?’ diye sordular. Resûlullah ﷺ şöyle buyurdu: ‘<span class="k">Bana itaat eden cennete girer.</span> Bana isyan eden ise yüz çevirmiş olur.’”</p>
+      <p class="src">📚 Buhârî, 7280</p>
+    </article>
+  </section>
+
+  <!-- 8 KÜFR Bİ'T-TÂĞÛT -->
+  <section class="sart" id="s8">
+    <div class="sart-head">
+      <div class="num">8</div>
+      <div class="names">
+        <h2>KÜFR Bİ'T-TÂĞÛT</h2>
+        <div class="ar-name" lang="ar" dir="rtl">الْكُفْرُ بِالطَّاغُوتِ</div>
+      </div>
+    </div>
+
+    <article class="delil ayet">
+      <div class="tag"><span class="ico">۞</span>Kur'an'dan delil</div>
+      <p class="lead">Allah Teâlâ şöyle buyurmuştur:</p>
+      <p class="ar" lang="ar" dir="rtl"><span class="br">﴿</span><span class="k">فَمَنْ يَكْفُرْ بِالطَّاغُوتِ</span> وَيُؤْمِنْ بِاللَّهِ فَقَدِ اسْتَمْسَكَ بِالْعُرْوَةِ الْوُثْقَىٰ لَا انْفِصَامَ لَهَا وَاللَّهُ سَمِيعٌ عَلِيمٌ<span class="br">﴾</span></p>
+      <p class="tr">“Kim <span class="k">tâğûtu inkâr edip</span> Allah'a iman ederse, kopması mümkün olmayan sapasağlam bir kulpa tutunmuş olur. Allah her şeyi işitendir, bilendir.”</p>
+      <p class="src">📚 Bakara Suresi, 256</p>
+    </article>
+
+    <article class="delil hadis">
+      <div class="tag"><span class="ico">ﷺ</span>Sünnetten delil</div>
+      <p class="lead">Resûlullah ﷺ şöyle buyurmuştur:</p>
+      <p class="ar" lang="ar" dir="rtl">مَنْ قَالَ لَا إِلَهَ إِلَّا اللَّهُ <span class="k">وَكَفَرَ بِمَا يُعْبَدُ مِنْ دُونِ اللَّهِ</span> حَرُمَ مَالُهُ وَدَمُهُ وَحِسَابُهُ عَلَى اللَّهِ</p>
+      <p class="tr">“Kim Lâ ilâhe illallah der ve <span class="k">Allah'tan başka ibadet edilenleri inkâr ederse</span>, onun malı ve canı dokunulmaz olur. Hesabı ise Allah'a aittir.”</p>
+      <p class="src">📚 Muslim, 23</p>
+    </article>
+  </section>
+
+</main>
+
+<footer>
+  <b>İLİM DERSLERİ</b><br>ilimdersleri.com.tr
+</footer>
+
+<script>
+  (function(){
+    var body = document.body;
+
+    // Ezber modları ve vurgu
+    document.querySelectorAll('[data-toggle]').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var cls = btn.getAttribute('data-toggle');
+        body.classList.toggle(cls);
+        btn.setAttribute('aria-pressed', body.classList.contains(cls) ? 'true' : 'false');
+        document.querySelectorAll('.shown').forEach(function(el){ el.classList.remove('shown'); });
+      });
+    });
+
+    // Gizlenen metni dokunarak göster / gizle
+    document.addEventListener('click', function(e){
+      var el = e.target.closest('.ar, .tr');
+      if(!el || !el.closest('.delil')) return;
+      var hiddenAr = el.classList.contains('ar') && body.classList.contains('hide-ar');
+      var hiddenTr = el.classList.contains('tr') && body.classList.contains('hide-tr');
+      if(hiddenAr || hiddenTr) el.classList.toggle('shown');
+    });
+
+    // Arapça yazı boyutu
+    var root = document.documentElement;
+    function size(){ return parseFloat(getComputedStyle(root).getPropertyValue('--ar-size')) || 1.9; }
+    document.getElementById('ar-plus').addEventListener('click', function(){
+      root.style.setProperty('--ar-size', Math.min(size() + 0.2, 3.4) + 'rem');
+    });
+    document.getElementById('ar-minus').addEventListener('click', function(){
+      root.style.setProperty('--ar-size', Math.max(size() - 0.2, 1.2) + 'rem');
+    });
+  })();
+</script>
+</body>
+</html>
